@@ -5,8 +5,6 @@ import openai
 from telebot import types
 
 users_list = {}
-with open('api.txt') as f:
-    api = f.read().strip().split()
 
 with open('users_list.txt', 'r') as f:
     lines = f.readlines()
@@ -18,8 +16,8 @@ with open('users_list.txt', 'r') as f:
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-bot = telebot.TeleBot(api[0])
-openai.api_key = api[1]
+bot = telebot.TeleBot(os.environ.get('botapi'))
+openai.api_key = os.environ.get('openai')
 
 # Set up a welcome message
 welcome_message = "Hi! I'm a chatbot, ask your damn questions"
