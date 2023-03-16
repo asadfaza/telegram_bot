@@ -4,7 +4,6 @@ import telebot
 import openai
 from telebot import types
 
-#hi
 users_list = {}
 with open('api.txt') as f:
     api = f.read().strip().split()
@@ -110,7 +109,7 @@ def get_bot_response(user_input):
     """
     prompt = f"User: {user_input}\nAI:"
     response = openai.Completion.create(
-        engine="code-davinci-002",
+        engine="text-davinci-003",
         prompt=prompt,
         temperature=0.7,
         max_tokens=1024,
