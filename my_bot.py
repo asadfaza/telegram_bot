@@ -110,7 +110,7 @@ def get_bot_response(user_input):
     """
     prompt = f"User: {user_input}\nAI:"
     response = openai.Completion.create(
-        engine="gpt-3.5-turbo-0301",
+        engine="code-davinci-002",
         prompt=prompt,
         temperature=0.7,
         max_tokens=1024,
