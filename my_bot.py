@@ -4,6 +4,7 @@ import telebot
 import openai
 from telebot import types
 
+#hi
 users_list = {}
 with open('api.txt') as f:
     api = f.read().strip().split()
