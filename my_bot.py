@@ -1,8 +1,6 @@
 import logging
-import os
 import telebot
 import openai
-from telebot import types
 
 users_list = {}
 with open('api.txt') as f:
